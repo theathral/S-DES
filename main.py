@@ -1,16 +1,20 @@
-# This is a sample Python script.
+import random
+import sdes_encryption
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# define variables
+def_key = [1, 0, 1, 0, 0, 0, 0, 0, 1, 0]  # 10-bit [0, 1]
+p10 = [2, 4, 1, 6, 3, 9, 0, 8, 7, 5]  # 10-bit [0, 9]
+p8 = [5, 2, 6, 3, 7, 4, 9, 8]  # 8-bit [0, 9]
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# key generation #
+def key_gen(n):
+    k = []
+    for i in range(n):
+        k.append(random.randint(0, 1))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    return k
+
+
+plain_text = []
+sdes_encryption.encryption(plain_text, def_key, p10, p8)
