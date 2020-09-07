@@ -47,6 +47,7 @@ def s_fun(text, s0, s1):
     return s_box_l + s_box_r
 
 
+# fk function #
 def fk(text, ep, s_key, s0, s1, p4):
     text_l = text[:4]  # L-half of text
     text_r = text[4:]  # R-half of text
