@@ -1,3 +1,4 @@
+import os
 import random
 import sdes
 import time
@@ -49,7 +50,9 @@ while True:
 loops = 0
 while True:
     try:
-        loops = int(input("How many? "))
+        loops = int(input("How many? (>= 1000) "))
+        if not loops >= 1000:
+            raise ValueError
         break
     except ValueError:
         continue
@@ -85,3 +88,5 @@ else:
 
 end_time = time.time()
 print("Time elapsed: ", end_time - start_time)
+
+os.system("pause")
